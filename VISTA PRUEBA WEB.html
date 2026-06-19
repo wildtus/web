@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WILDTUS | Periodista Musical</title>
+    <!-- Importación de tipografías modernas -->
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+    /* Estilos Cinematográficos de Borde a Borde */
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #050505;
+        color: #aaaaaa;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    /* Contenedor principal que ocupa toda la pantalla */
+    .main-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Forzamos a que el lado del contenido use el 100% real sin límites */
+    .content-side {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 🌌 EL GRAN BANNER SUPERIOR DE BORDE A BORDE */
+    .hero-banner {
+        background-image: linear-gradient(rgba(5, 5, 5, 0.2), rgba(5, 5, 5, 0.95)), url('mifoto1.jpg');
+        background-size: cover;
+        background-position: center 27%; /* Sube o baja el número (10%, 15%, 30%) para mover tu cara */
+        height: 55vh; 
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center; 
+        padding-bottom: 40px;
+        box-sizing: border-box;
+    }
+
+    /* 📝 CONTENEDOR DE TEXTOS (Se mantiene centrado y protegido para que no se pegue a las orillas) */
+    .info-container {
+        max-width: 750px;
+        width: 90%;
+        margin: 0 auto; /* Centra el bloque de texto en pantallas grandes */
+        padding: 40px 20px 80px 20px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+header {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+    header h1 {
+        font-family: 'Syne', sans-serif;
+        font-size: 3.8rem;
+        font-weight: 700;
+        margin: 0 0 8px 0;
+        color: #ffffff;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+    }
+
+    header p {
+        color: #ba55d3;
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin: 0 0 20px 0;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+    }
+
+    .header-socials {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 10px;
+    }
+
+    .header-socials a {
+        color: #ccc;
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: color 0.3s ease;
+    }
+
+    .header-socials a:hover {
+        color: #00ffaa;
+    }
+
+    section {
+        margin-top: 60px;
+    }
+
+    h2 {
+        font-family: 'Syne', sans-serif;
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        color: #555;
+        margin-bottom: 25px;
+    }
+
+    .bio {
+        font-size: 1.15rem;
+        line-height: 1.9;
+        color: #cccccc;
+    }
+
+    .link-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .link-list li {
+        margin: 20px 0;
+    }
+
+    .link-list a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    .link-list a:hover {
+        color: #ba55d3;
+        text-shadow: 0 0 10px rgba(186, 85, 211, 0.6);
+        transform: scale(1.05);
+    }
+
+    footer {
+        margin-top: 80px;
+        font-size: 0.85rem;
+        color: #444;
+        letter-spacing: 1px;
+    }
+    /* 💳 BOTÓN DE PAYPAL ESTILO CINEMATOGRÁFICO */
+.paypal-container {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.btn-paypal {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #ba55d3; /* Borde morado gótico */
+    padding: 14px 28px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-paypal:hover {
+    background-color: #ba55d3; /* Se llena de morado al pasar el mouse */
+    color: #050505; /* El texto se pone negro al activarse */
+    box-shadow: 0 0 15px rgba(186, 85, 211, 0.5);
+    transform: translateY(-2px); /* Pequeño salto hacia arriba */
+}
+</style>
+</head>
+<body>
+
+    <div class="main-wrapper">
+        
+        <!-- LADO IZQUIERDO: CONTENIDO -->
+        <div class="content-side">
+            
+            <!-- Banner con textos de cabecera -->
+            <div class="hero-banner">
+                <header>
+                    <h1>Luis Bonilla</h1>
+                    <p>Music Journalist & Content Creator</p>
+                    <div class="header-socials">
+                        <a href="https://www.instagram.com/wildtus?igsh=MW0za21jMGExdWd3Zg%3D%3D&utm_source=qr" target="_blank">Instagram ↗</a>
+                        <a href="https://www.tiktok.com/@wildtus?_r=1&_t=ZS-97LHGmOFn7N" target="_blank">TikTok ↗</a>
+                        <a href="https://www.instagram.com/rockalavena.cl?igsh=MXB6OHUyZ2k2NmE1eA%3D%3D&utm_source=qr" target="_blank">Rockalavena ↗</a>
+                    </div>
+                </header>
+            </div>
+
+            <!-- Bloque de información y secciones -->
+            <div class="info-container">
+                
+                <section class="about">
+                    <h2>BIO</h2>
+                    <p class="bio">Periodista musical y creador de contenido en Rockalavena.cl, especializado en reseñas de conciertos, entrevistas exclusivas y cobertura de festivales. Mi trabajo busca acercar a los fans a las historias, emociones y momentos clave que definen la escena musical actual, destacando tanto a artistas consagrados como a nuevas propuestas nacionales e internacionales.
+</p>
+                </section>
+
+                <section class="reviews">
+                    <h2>Reviews Destacadas</h2>
+                    <ul class="link-list">
+                        <li><a href="https://www.rockalavena.cl/eventos-el-dia-en-que-el-teatro-caupolican-se-transformo-en-el-reino-encantado-de-rhapsody/" target="_blank"> El día en que el Teatro Caupolicán se transformó en reino ↗</a></li>
+                        <li><a href="https://www.rockalavena.cl/review-concierto-black-label-society-en-vivo-entre-el-luto-la-hermandad-y-un-legado-que-no-se-apaga/" target="_blank"> Black Label Society: Entre el luto y la hermandad ↗</a></li>
+                        <li><a href="https://www.rockalavena.cl/review-concierto-entre-pop-electronica-y-rock-asi-se-vivio-la-jornada-final-de-lollapalooza-clile/" target="_blank"> Lollapalooza: Entre pop, electrónica y rock ↗</a></li>
+                        <li><a href="https://www.rockalavena.cl/review-concierto-entre-mosh-y-pop-asi-se-vivio-el-intenso-dia-2-de-lollapalooza-chile-2026/" target="_blank"> Lollapalooza Día 2: Entre mosh y pop ↗</a></li>
+                    </ul>
+                </section>
+
+                <section class="reels">
+                    <h2>Entrevistas & Reels</h2>
+                    <ul class="link-list">
+                        <li><a href="https://www.instagram.com/reel/DY-yvV701N_/" target="_blank"> Reel: Alineación titular de Rhapsody ↗</a></li>
+                        <li><a href="https://www.instagram.com/reel/DV8yylvDWX5/" target="_blank"> Entrevista: Claudio Valenzuela (Lucybell) ↗</a></li>
+                        <li><a href="https://www.instagram.com/reel/DNXGx1Ptyw-/" target="_blank"> Entrevista: Andi Deris (Helloween) ↗</a></li>
+                        <li><a href="https://www.instagram.com/reel/DHjyN7IxsYQ/" target="_blank"> Entrevista: Arde Bogotá Lolla ↗</a></li>
+                    </ul>
+                </section>
+
+                             <section class="contact">
+                    <h2>Contacto</h2>
+                    <ul class="link-list">
+                        <li><a href="mailto:bonilla29_88@outlook.com">📩 bonilla29_88@outlook.com</a></li>
+                    </ul>
+                </section>
+
+                <!-- 💳 SECCIÓN PAYPAL -->
+                <div class="paypal-container">
+                    <a href="https://paypal.me/wildtus?locale.x=en_US&country.x=CL" target="_blank" class="btn-paypal">
+                        ☕ Apoya mi contenido (PayPal) ↗
+                    </a>
+                </div>
+
+                <footer>
+                    <p>© 2026 | Nos vemos en el pit \m/</p>
+                </footer>
+              
+            </div> <!-- Cierre .info-container -->
+        </div> <!-- Cierre .content-side -->
+
+    </div> <!-- Cierre .main-wrapper -->
+
+</body>
+</html>
