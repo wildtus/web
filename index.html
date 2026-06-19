@@ -37,7 +37,7 @@
     .hero-banner {
         background-image: linear-gradient(rgba(5, 5, 5, 0.2), rgba(5, 5, 5, 0.95)), url('mifoto1.jpg');
         background-size: cover;
-        background-position: center 27%; /* Sube o baja el número (10%, 15%, 30%) para mover tu cara */
+        background-position: center 27%; 
         height: 55vh; 
         width: 100%;
         display: flex;
@@ -48,30 +48,33 @@
         box-sizing: border-box;
     }
 
-    /* 📝 CONTENEDOR DE TEXTOS (Se mantiene centrado y protegido para que no se pegue a las orillas) */
+    /* 📝 CONTENEDOR DE TEXTOS */
     .info-container {
         max-width: 750px;
         width: 90%;
-        margin: 0 auto; /* Centra el bloque de texto en pantallas grandes */
+        margin: 0 auto; 
         padding: 40px 20px 80px 20px;
         text-align: center;
         box-sizing: border-box;
     }
-header {
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+
+    header {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
     header h1 {
         font-family: 'Syne', sans-serif;
         font-size: 3.8rem;
         font-weight: 700;
         margin: 0 0 8px 0;
         color: #ffffff;
-        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+        /* 👤 Sombra negra intensa multinivel para romper el fondo de la foto */
+        text-shadow: 0 4px 15px rgba(0, 0, 0, 1), 0 2px 5px rgba(0, 0, 0, 1);
     }
 
     header p {
@@ -110,13 +113,13 @@ header {
     }
 
     h2 {
-    font-family: 'Syne', sans-serif;
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    color: #ba55d3; /* ← ¡Aquí pusimos tu morado gótico neón! */
-    margin-bottom: 25px;
-}
+        font-family: 'Syne', sans-serif;
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        color: #ba55d3; 
+        margin-bottom: 40px;
+    }
 
     .bio {
         font-size: 1.15rem;
@@ -124,6 +127,28 @@ header {
         color: #cccccc;
     }
 
+    /* 📺 CONTENEDOR DE VIDEO RESPONSIVE (Ajuste de cine 16:9) */
+    .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%; 
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        background: #000;
+        border-radius: 4px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+        border: 1px solid #1a1a1a;
+    }
+
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* LISTAS DE ENLACES TOTALMENTE LIMPIAS */
     .link-list {
         list-style: none;
         padding: 0;
@@ -146,7 +171,7 @@ header {
     .link-list a:hover {
         color: #ba55d3;
         text-shadow: 0 0 10px rgba(186, 85, 211, 0.6);
-        transform: scale(1.05);
+        transform: scale(1.03);
     }
 
     footer {
@@ -155,42 +180,41 @@ header {
         color: #444;
         letter-spacing: 1px;
     }
-    /* 💳 BOTÓN DE PAYPAL ESTILO CINEMATOGRÁFICO */
-.paypal-container {
-    margin-top: 50px;
-    margin-bottom: 20px;
-}
 
-.btn-paypal {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background-color: transparent;
-    color: #ffffff;
-    border: 1px solid #ba55d3; /* Borde morado gótico */
-    padding: 14px 28px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
+    .paypal-container {
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
 
-.btn-paypal:hover {
-    background-color: #ba55d3; /* Se llena de morado al pasar el mouse */
-    color: #050505; /* El texto se pone negro al activarse */
-    box-shadow: 0 0 15px rgba(186, 85, 211, 0.5);
-    transform: translateY(-2px); /* Pequeño salto hacia arriba */
-}
+    .btn-paypal {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background-color: transparent;
+        color: #ffffff;
+        border: 1px solid #ba55d3; 
+        padding: 14px 28px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-paypal:hover {
+        background-color: #ba55d3; 
+        color: #050505; 
+        box-shadow: 0 0 15px rgba(186, 85, 211, 0.5);
+        transform: translateY(-2px); 
+    }
 </style>
 </head>
 <body>
 
     <div class="main-wrapper">
         
-        <!-- LADO IZQUIERDO: CONTENIDO -->
         <div class="content-side">
             
             <!-- Banner con textos de cabecera -->
@@ -211,8 +235,7 @@ header {
                 
                 <section class="about">
                     <h2>BIO</h2>
-                    <p class="bio">Periodista musical y creador de contenido en Rockalavena.cl, especializado en reseñas de conciertos, entrevistas exclusivas y cobertura de festivales. Mi trabajo busca acercar a los fans a las historias, emociones y momentos clave que definen la escena musical actual, destacando tanto a artistas consagrados como a nuevas propuestas nacionales e internacionales.
-</p>
+                    <p class="bio">Periodista musical y creador de contenido en Rockalavena.cl, especializado en reseñas de conciertos, interviews exclusivas y cobertura de festivales. Mi trabajo busca acercar a los fans a las historias, emociones y momentos clave que definen la escena musical actual, destacando tanto a artistas consagrados como a nuevas propuestas nacionales e internacionales.</p>
                 </section>
 
                 <section class="reviews">
@@ -235,10 +258,18 @@ header {
                     </ul>
                 </section>
 
-                             <section class="contact">
+                <!-- 📺 SECCIÓN VIDEO EMBED DE YOUTUBE (AHORA ANTES DE CONTACTO) -->
+                <section class="featured-video">
+                    <h2>Contenido Destacado</h2>
+                    <div class="video-wrapper">
+                        <!-- Reemplaza el ID "dQw4w9WgXcQ" por el ID de tu video preferido de YouTube -->
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/t3Cf0qtsncw?si=p7JYZ_Kcm9qsfAmn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </section>
+
+                <section class="contact">
                     <h2>Contacto</h2>
                     <ul class="link-list">
-                        <li><a href="mailto:bonilla29_88@outlook.com">📩 bonilla29_88@outlook.com</a></li>
+                        <li><a href="mailto:bonilla29_88@outlook.com">bonilla29_88@outlook.com ↗</a></li>
                     </ul>
                 </section>
 
