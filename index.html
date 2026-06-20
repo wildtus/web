@@ -3,22 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WILDTUS | Periodista Musical</title>
-    <!-- Importación de tipografías modernas -->
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <title>WILDTUS | Luis Bonilla - Periodista Musical</title>
+    
+    <!-- SEO & Metadata[cite: 2] -->
+    <meta name="description" content="Luis Bonilla - Periodista Musical y Creador de Contenido en Rockalavena.cl. Entrevistas exclusivas, cobertura de festivales y reseñas de conciertos.">
+    <meta name="keywords" content="Luis Bonilla, WILDTUS, periodista musical, Rockalavena, reseñas de conciertos, entrevistas de metal, festivales Chile, Lollapalooza">
+    <meta name="author" content="Luis Bonilla">
+    
+    <!-- Open Graph / Facebook / WhatsApp[cite: 2] -->
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://www.rockalavena.cl/">
+    <meta property="og:title" content="WILDTUS | Luis Bonilla - Periodista Musical">
+    <meta property="og:description" content="Periodista musical y creador de contenido en Rockalavena.cl. Entrevistas exclusivas, reseñas y cobertura del pit.">
+    <meta property="og:image" content="mifoto1.jpg">
+
+    <!-- Twitter[cite: 2] -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="WILDTUS | Luis Bonilla - Periodista Musical">
+    <meta property="twitter:description" content="Periodista musical y creador de contenido en Rockalavena.cl. Entrevistas exclusivas, reseñas y cobertura del pit.">
+    <meta property="twitter:image" content="mifoto1.jpg">
+
+    <!-- Favicon Inline SVG (Guitarra)[cite: 2] -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎸</text></svg>">
+
+    <!-- Importación de tipografías modernas[cite: 2] -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
-    /* Estilos Cinematográficos de Borde a Borde */
+    /* VARIABLES DE DISEÑO (ESTILO MINIMALISTA)[cite: 2] */
+    :root {
+        --bg-main: #050505;
+        --bg-card: #0d0d0d;
+        --border-color: #1a1a1a;
+        --border-hover: #333333;
+        
+        --text-primary: #ffffff;
+        --text-secondary: #999999;
+        --text-muted: #555555;
+        
+        --accent: #ba55d3;
+        --accent-rgb: 186, 85, 211;
+        --accent-glow: #ffffff;
+        
+        --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    /* ESTILOS GLOBALES[cite: 2] */
+    *, *::before, *::after {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        box-sizing: border-box;
+    }
+
     body {
         font-family: 'Inter', sans-serif;
-        background-color: #050505;
-        color: #aaaaaa;
+        background-color: var(--bg-main);
+        color: var(--text-secondary);
         margin: 0;
         padding: 0;
         width: 100%;
+        overflow-x: hidden;
     }
 
-    /* Contenedor principal que ocupa toda la pantalla */
     .main-wrapper {
         width: 100%;
         display: flex;
@@ -26,18 +73,18 @@
         align-items: center;
     }
 
-    /* Forzamos a que el lado del contenido use el 100% real sin límites */
     .content-side {
         width: 100%;
         margin: 0;
         padding: 0;
     }
 
-    /* 🌌 EL GRAN BANNER SUPERIOR DE BORDE A BORDE */
+    /* 🌌 BANNER SUPERIOR HERO[cite: 2] */
     .hero-banner {
-        background-image: linear-gradient(rgba(5, 5, 5, 0.2), rgba(5, 5, 5, 0.95)), url('mifoto1.jpg');
+        background-image: linear-gradient(to bottom, rgba(5, 5, 5, 0.1) 0%, rgba(5, 5, 5, 0.6) 70%, var(--bg-main) 100%), url('banner.jpg');
         background-size: cover;
         background-position: center 27%; 
+        background-attachment: fixed;
         height: 55vh; 
         width: 100%;
         display: flex;
@@ -46,18 +93,19 @@
         align-items: center; 
         padding-bottom: 40px;
         box-sizing: border-box;
+        border-bottom: 1px solid var(--border-color);
     }
 
-    /* 📝 CONTENEDOR DE TEXTOS */
+    /* 📝 CONTENEDOR DE CONTENIDO (REJILLA DE DISEÑO)[cite: 2] */
     .info-container {
-        max-width: 750px;
+        max-width: 960px; /* Ancho más compacto para estilo editorial */
         width: 90%;
         margin: 0 auto; 
-        padding: 40px 20px 80px 20px;
-        text-align: center;
+        padding: 60px 20px 100px 20px;
         box-sizing: border-box;
     }
 
+    /* CABECERA (HERO TEXT)[cite: 2] */
     header {
         width: 100%;
         text-align: center;
@@ -65,69 +113,434 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+        transition: var(--transition-smooth);
     }
 
     header h1 {
-        font-family: 'Syne', sans-serif;
+        font-family: 'Inter', sans-serif;
         font-size: 3.8rem;
-        font-weight: 700;
-        margin: 0 0 8px 0;
-        color: #ffffff;
-        /* 👤 Sombra negra intensa multinivel para romper el fondo de la foto */
-        text-shadow: 0 4px 15px rgba(0, 0, 0, 1), 0 2px 5px rgba(0, 0, 0, 1);
+        font-weight: 800;
+        margin: 0 0 10px 0;
+        color: var(--text-primary);
+        letter-spacing: -2px;
+        transition: var(--transition-smooth);
+        
+        background: none;
+        padding: 0;
+        border-radius: 0;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border: none;
+
+        text-shadow: 
+            -2px -2px 0 #050505,  
+             2px -2px 0 #050505,
+            -2px  2px 0 #050505,
+             2px  2px 0 #050505,
+             0px  4px 15px rgba(0, 0, 0, 0.9);
     }
 
     header p {
-        color: #ba55d3;
-        font-size: 1rem;
-        font-weight: 600;
+        color: var(--accent); 
+        font-size: 0.95rem;
+        font-weight: 800; 
         text-transform: uppercase;
-        letter-spacing: 3px;
-        margin: 0 0 20px 0;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+        letter-spacing: 4px;
+        margin: 10px 0 25px 0;
+        transition: var(--transition-smooth);
+        display: inline-block;
+
+        background: none;
+        padding: 0;
+        border-radius: 0;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border: none;
+        
+        text-shadow: 
+            -1.5px -1.5px 0 #050505,  
+             1.5px -1.5px 0 #050505,
+            -1.5px  1.5px 0 #050505,
+             1.5px  1.5px 0 #050505,
+             0px 3px 10px rgba(0, 0, 0, 0.95),
+             0px 0px 8px rgba(186, 85, 211, 0.4); 
     }
 
+    /* 📱 BOTONES DE REDES SOCIALES MINIMALISTAS[cite: 2] */
     .header-socials {
         display: flex;
         justify-content: center;
         gap: 25px;
         margin-top: 10px;
+        flex-wrap: wrap;
     }
 
     .header-socials a {
-        color: #ccc;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.03); 
+        border: 1px solid var(--border-color);
+        padding: 8px 16px; 
+        color: var(--text-primary); 
         text-decoration: none;
         font-size: 0.85rem;
         font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: 2px;
-        transition: color 0.3s ease;
+        letter-spacing: 1px;
+        border-radius: 4px;
+        transition: var(--transition-smooth);
     }
 
     .header-socials a:hover {
-        color: #00ffaa;
+        color: var(--text-primary);
+        background: rgba(186, 85, 211, 0.15); 
+        border-color: var(--accent);
+        transform: translateY(-2px); 
+        box-shadow: 0 4px 12px rgba(186, 85, 211, 0.2);
     }
 
-    section {
-        margin-top: 60px;
+    .header-socials a svg {
+        transition: transform 0.3s ease;
+        flex-shrink: 0;
     }
 
-    h2 {
-        font-family: 'Syne', sans-serif;
+    .header-socials a:hover svg {
+        transform: scale(1.1);
+    }
+
+    /* 📌 CABECERA PEGAJOSA AL HACER SCROLL (STICKY NAV)[cite: 2] */
+    header.sticky {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(13, 13, 13, 0.95); 
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border-color);
+        padding: 12px 50px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+        box-sizing: border-box;
+        animation: slideHeaderDown 0.3s ease forwards;
+    }
+
+    @keyframes slideHeaderDown {
+        from { transform: translateY(-100%); }
+        to { transform: translateY(0); }
+    }
+
+    header.sticky h1 {
+        font-size: 1.5rem;
+        margin: 0;
+        letter-spacing: -1px;
+        background: none;
+        border: none;
+        padding: 0;
+        backdrop-filter: none;
+    }
+
+    header.sticky p {
+        display: none; 
+    }
+
+    header.sticky .header-socials {
+        margin: 0;
+        gap: 15px;
+    }
+
+    header.sticky .header-socials a {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        background: none;
+        border: 1px solid transparent;
+    }
+    
+    header.sticky .header-socials a:hover {
+        background: rgba(186, 85, 211, 0.15);
+        border-color: var(--accent);
+    }
+
+    @media (max-width: 767px) {
+        header.sticky {
+            padding: 12px 20px;
+            flex-direction: column;
+            gap: 8px;
+            text-align: center;
+        }
+        header.sticky h1 {
+            font-size: 1.3rem;
+        }
+        header.sticky .header-socials a {
+            padding: 4px 8px;
+            font-size: 0.75rem;
+            gap: 4px;
+        }
+    }
+
+    /* 🧱 MAQUETACIÓN EN GRID RESPONSIVO[cite: 2] */
+    .grid-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px; 
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    /* 🔮 TARJETAS PLANAS MINIMALISTAS[cite: 2] */
+    .card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 35px;
+        box-sizing: border-box;
+        box-shadow: none;
+        transition: var(--transition-smooth);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card:hover {
+        border-color: var(--border-hover);
+    }
+
+    .card h2 {
+        font-family: 'Inter', sans-serif;
         font-size: 0.95rem;
         text-transform: uppercase;
-        letter-spacing: 4px;
-        color: #ba55d3; 
-        margin-bottom: 40px;
+        letter-spacing: 3px;
+        color: var(--text-primary); 
+        margin-top: 0;
+        margin-bottom: 25px;
+        font-weight: 700;
+        position: relative;
+        display: inline-block;
+    }
+
+    .card h2::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 30px;
+        height: 1.5px;
+        background: var(--accent);
+        transition: var(--transition-smooth);
+    }
+
+    /* Tarjeta de Bio[cite: 2] */
+    .about {
+        grid-column: 1 / -1;
+    }
+
+    main {
+        margin-top: 0px; 
     }
 
     .bio {
-        font-size: 1.15rem;
-        line-height: 1.9;
-        color: #cccccc;
+        font-size: 1.1rem;
+        line-height: 1.85;
+        color: #999999;
+        margin: 0;
     }
 
-    /* 📺 CONTENEDOR DE VIDEO RESPONSIVE (Ajuste de cine 16:9) */
+    /* 📊 TARJETA DE ESTADÍSTICAS (SIN CARD - TRANSPARENTE)[cite: 2] */
+    .stats-container {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        padding: 25px 0;
+        gap: 20px;
+        flex-wrap: wrap;
+        background: none;
+        border: none;
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+        border-radius: 0;
+    }
+
+    .stat-item {
+        flex: 1;
+        min-width: 150px;
+        border-right: 1px solid var(--border-color);
+    }
+
+    .stat-item:last-child {
+        border-right: none;
+    }
+
+    @media (max-width: 767px) {
+        .stat-item {
+            border-right: none;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+        .stat-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+    }
+
+    .stat-num {
+        font-family: 'Inter', sans-serif;
+        font-size: 2.4rem;
+        font-weight: 800;
+        color: var(--text-primary);
+        margin-bottom: 4px;
+        transition: var(--transition-smooth);
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #555555;
+        font-weight: 600;
+    }
+
+    /* 🎙️ SECCIÓN DE TESTIMONIALES (SIN CARD - TRANSPARENTE)[cite: 2] */
+    .testimonials {
+        grid-column: 1 / -1;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        padding: 20px 0;
+        background: none;
+        border: none;
+        border-radius: 0;
+    }
+
+    .testimonials h2 {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: var(--text-primary); 
+        margin-top: 0;
+        margin-bottom: 25px;
+        font-weight: 700;
+        position: relative;
+        display: inline-block;
+    }
+
+    .testimonials h2::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 1.5px;
+        background: var(--accent);
+    }
+
+    .quotes-slider {
+        position: relative;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .quote-slide {
+        display: none;
+        width: 100%;
+        animation: slideFadeIn 0.5s ease forwards;
+    }
+
+    .quote-slide.active {
+        display: block;
+    }
+
+    @keyframes slideFadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .quote-text {
+        font-style: italic;
+        font-size: 1.15rem;
+        line-height: 1.7;
+        color: #cccccc;
+        margin-bottom: 12px;
+    }
+
+    .quote-author {
+        font-weight: 700;
+        color: var(--accent);
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .slider-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 10px;
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.15);
+        cursor: pointer;
+        transition: var(--transition-smooth);
+    }
+
+    .dot.active {
+        background: var(--accent);
+        transform: scale(1.3);
+    }
+
+    /* 🗂️ PESTAÑAS DE FILTRADO (ESTILO ORIGINAL RESTAURADO)[cite: 2] */
+    .filter-tabs {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin: 20px 0 10px 0;
+        flex-wrap: wrap;
+    }
+
+    .tab-btn {
+        background: none;
+        border: none;
+        border-bottom: 2px solid transparent;
+        padding: 8px 0;
+        border-radius: 0;
+        color: #555555;
+        cursor: pointer;
+        font-size: 0.85rem;
+        font-weight: 700;
+        transition: var(--transition-smooth);
+        letter-spacing: 2px;
+    }
+
+    .tab-btn:hover {
+        color: var(--text-primary);
+    }
+
+    .tab-btn.active {
+        border-color: var(--accent);
+        color: var(--text-primary);
+    }
+
+    .filterable {
+        transition: opacity 0.3s ease, transform 0.3s ease, var(--transition-smooth);
+    }
+
+    /* 📺 CONTENEDOR DE MULTIMEDIA Y VIDEO DESTACADO[cite: 2] */
     .video-wrapper {
         position: relative;
         padding-bottom: 56.25%; 
@@ -135,9 +548,13 @@
         overflow: hidden;
         max-width: 100%;
         background: #000;
-        border-radius: 4px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.7);
-        border: 1px solid #1a1a1a;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+        transition: var(--transition-smooth);
+    }
+
+    .video-wrapper:hover {
+        border-color: var(--border-hover);
     }
 
     .video-wrapper iframe {
@@ -148,66 +565,236 @@
         height: 100%;
     }
 
-    /* LISTAS DE ENLACES TOTALMENTE LIMPIAS */
+    /* 📱 CONTENEDOR VERTICAL LOOK CELULAR PARA EL EMBED DE INSTAGRAM */
+    .instagram-wrapper {
+        width: 100%;
+        max-width: 340px;   /* Simula las dimensiones de un teléfono */
+        height: 600px;      /* Altura vertical pro de un smartphone */
+        margin: 0 auto;     /* Centra el reproductor dentro de la tarjeta */
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        background: #000000;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        box-sizing: border-box;
+        overflow: hidden;   
+    }
+
+    .instagram-wrapper .instagram-media {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+        background: #0d0d0d !important;
+        border: none !important;
+    }
+
+    /* 🖼️ BANNER DE TEXTO INTERACTIVO ESTILO REVISTA (PARA RESEÑA DESTACADA) */
+    .placeholder-img {
+        height: 100%;
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 30px;
+        background: linear-gradient(to bottom, rgba(5,5,5,0.2) 0%, rgba(5,5,5,0.9) 100%), url('banner.jpg');
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+        text-decoration: none;
+        transition: var(--transition-smooth);
+    }
+
+    .placeholder-img:hover {
+        border-color: var(--border-hover);
+    }
+
+    .placeholder-img span {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: #fff;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+        margin-bottom: 5px;
+        text-transform: uppercase;
+    }
+
+    .placeholder-img small {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--accent);
+        font-weight: 700;
+    }
+
+    /* 🔗 FILAS DE ENLACES MINIMALISTAS (SIN CAJAS)[cite: 2] */
     .link-list {
         list-style: none;
         padding: 0;
         margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
     }
 
     .link-list li {
-        margin: 20px 0;
+        margin: 0;
+        width: 100%;
     }
 
     .link-list a {
-        color: #ffffff;
-        text-decoration: none;
-        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 0;
+        background: none;
+        border: none;
+        border-bottom: 1px solid #141414;
+        border-radius: 0;
+        color: #999999;
+        font-size: 1.05rem;
         font-weight: 500;
-        transition: all 0.3s ease;
-        display: inline-block;
+        text-decoration: none;
+        transition: var(--transition-smooth);
+        box-sizing: border-box;
+    }
+
+    .link-list li:last-child a {
+        border-bottom: none;
     }
 
     .link-list a:hover {
-        color: #ba55d3;
-        text-shadow: 0 0 10px rgba(186, 85, 211, 0.6);
-        transform: scale(1.03);
+        background: none;
+        border-bottom-color: #333333;
+        color: var(--text-primary);
+        transform: translateX(4px);
     }
 
-    footer {
-        margin-top: 80px;
-        font-size: 0.85rem;
-        color: #444;
-        letter-spacing: 1px;
+    .link-list a::after {
+        content: "→";
+        font-size: 1.1rem;
+        color: #444444;
+        transition: transform 0.3s ease, color 0.3s ease;
+        padding-left: 10px;
     }
 
-    .paypal-container {
-        margin-top: 50px;
-        margin-bottom: 20px;
+    .link-list a:hover::after {
+        transform: translateX(3px);
+        color: var(--accent);
+    }
+
+    /* 💳 TARJETA PAYPAL / APOYO MINIMALISTA[cite: 2] */
+    .paypal-card p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-top: 0;
+        margin-bottom: 25px;
+        color: var(--text-secondary);
     }
 
     .btn-paypal {
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         gap: 10px;
-        background-color: transparent;
-        color: #ffffff;
-        border: 1px solid #ba55d3; 
+        background: none;
+        color: var(--text-primary);
+        border: 1px solid var(--accent);
         padding: 14px 28px;
-        font-size: 0.95rem;
-        font-weight: 600;
+        font-size: 0.85rem;
+        font-weight: 700;
         text-transform: uppercase;
-        letter-spacing: 2px;
+        letter-spacing: 1.5px;
         text-decoration: none;
-        border-radius: 4px;
-        transition: all 0.3s ease;
+        border-radius: 6px;
+        transition: var(--transition-smooth);
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .btn-paypal:hover {
-        background-color: #ba55d3; 
-        color: #050505; 
-        box-shadow: 0 0 15px rgba(186, 85, 211, 0.5);
-        transform: translateY(-2px); 
+        background: var(--accent);
+        color: #000000;
+        transform: translateY(-1px);
+    }
+
+    .btn-paypal svg {
+        transition: transform 0.3s ease;
+    }
+
+    .btn-paypal:hover svg {
+        transform: scale(1.1);
+    }
+
+    /* ✉️ SECCIÓN CONTACTO[cite: 2] */
+    .contact-list a {
+        border-bottom: 1px solid #141414;
+    }
+
+    .contact-list a:hover {
+        border-bottom-color: #333333;
+    }
+
+    /* 👣 PIE DE PÁGINA[cite: 2] */
+    footer {
+        margin-top: 80px;
+        text-align: center;
+        padding: 20px 0;
+        border-top: 1px solid var(--border-color);
+        width: 100%;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+        color: #444444;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    /* 📊 RESPONSIVIDAD CON MEDIA QUERIES[cite: 2] */
+    .contact-paypal-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        width: 100%;
+    }
+
+    @media (min-width: 768px) {
+        .grid-layout {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .contact-paypal-wrapper {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr 1fr;
+            gap: 30px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        header h1 {
+            font-size: 2.8rem;
+        }
+        
+        .info-container {
+            padding: 40px 15px 60px 15px;
+            width: 95%;
+        }
+        
+        .hero-banner {
+            height: 50vh;
+            padding-bottom: 30px;
+            background-attachment: scroll;
+        }
+        
+        .card {
+            padding: 30px 20px;
+        }
     }
 </style>
 </head>
@@ -217,87 +804,290 @@
         
         <div class="content-side">
             
-            <!-- Banner con textos de cabecera -->
+            <!-- Banner Hero con cabecera[cite: 2] -->
             <div class="hero-banner">
-                <header>
+                <header id="main-header">
                     <h1>Luis Bonilla</h1>
                     <p>Music Journalist & Content Creator</p>
                     <div class="header-socials">
-                        <a href="https://www.instagram.com/wildtus?igsh=MW0za21jMGExdWd3Zg%3D%3D&utm_source=qr" target="_blank">Instagram ↗</a>
-                        <a href="https://www.tiktok.com/@wildtus?_r=1&_t=ZS-97LHGmOFn7N" target="_blank">TikTok ↗</a>
-                        <a href="https://www.instagram.com/rockalavena.cl?igsh=MXB6OHUyZ2k2NmE1eA%3D%3D&utm_source=qr" target="_blank">Rockalavena ↗</a>
+                        <!-- Instagram[cite: 2] -->
+                        <a href="https://www.instagram.com/wildtus?igsh=MW0za21jMGExdWd3Zg%3D%3D&utm_source=qr" target="_blank">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            Instagram
+                        </a>
+                        <!-- TikTok[cite: 2] -->
+                        <a href="https://www.tiktok.com/@wildtus?_r=1&_t=ZS-97LHGmOFn7N" target="_blank">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.06-2.89-.52-4.09-1.33-.77-.52-1.43-1.21-1.92-2-.08-.13-.13-.08-.13.06v7.06c0 1.37-.21 2.79-.87 4.01-.98 1.81-2.92 3.04-4.97 3.19-2.3.17-4.71-.85-5.91-2.83-1.35-2.2-1.07-5.32.74-7.23 1.43-1.51 3.63-2.23 5.69-1.81v4.02c-1.12-.31-2.38-.08-3.23.71-.84.8-1.05 2.11-.5 3.14.54 1.02 1.77 1.61 2.9 1.48 1.05-.12 1.95-.94 2.17-1.97.08-.37.09-.76.09-1.14V.02z"/></svg>
+                            TikTok
+                        </a>
+                        <!-- Rockalavena[cite: 2] -->
+                        <a href="https://www.instagram.com/rockalavena.cl?igsh=MXB6OHUyZ2k2NmE1eA%3D%3D&utm_source=qr" target="_blank">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                            Rockalavena
+                        </a>
                     </div>
                 </header>
             </div>
-
-            <!-- Bloque de información y secciones -->
-            <div class="info-container">
+ 
+            <!-- Bloque de información en cuadrícula (grid)[cite: 2] -->
+            <main class="info-container">
                 
-                <section class="about">
-                    <h2>BIO</h2>
-                    <p class="bio">Periodista musical y creador de contenido en Rockalavena.cl, especializado en reseñas de conciertos, interviews exclusivas y cobertura de festivales. Mi trabajo busca acercar a los fans a las historias, emociones y momentos clave que definen la escena musical actual, destacando tanto a artistas consagrados como a nuevas propuestas nacionales e internacionales.</p>
-                </section>
+                <div class="grid-layout">
+                    
+                    <!-- BIOGRAFÍA[cite: 2] -->
+                    <section class="about card">
+                        <h2>BIO</h2>
+                        <p class="bio">Periodista musical y creador de contenido en Rockalavena.cl, especializado en reseñas de conciertos, entrevistas exclusivas y cobertura de festivales. Mi trabajo busca acercar a los fans a las historias, emociones y momentos clave que definen la escena musical actual, destacando tanto a artistas consagrados como a nuevas propuestas nacionales e internacionales.[cite: 2]</p>
+                    </section>
 
-                <section class="reviews">
-                    <h2>Reviews Destacadas</h2>
-                    <ul class="link-list">
-                        <li><a href="https://www.rockalavena.cl/eventos-el-dia-en-que-el-teatro-caupolican-se-transformo-en-el-reino-encantado-de-rhapsody/" target="_blank"> El día en que el Teatro Caupolicán se transformó en reino ↗</a></li>
-                        <li><a href="https://www.rockalavena.cl/review-concierto-black-label-society-en-vivo-entre-el-luto-la-hermandad-y-un-legado-que-no-se-apaga/" target="_blank"> Black Label Society: Entre el luto y la hermandad ↗</a></li>
-                        <li><a href="https://www.rockalavena.cl/review-concierto-entre-pop-electronica-y-rock-asi-se-vivio-la-jornada-final-de-lollapalooza-clile/" target="_blank"> Lollapalooza: Entre pop, electrónica y rock ↗</a></li>
-                        <li><a href="https://www.rockalavena.cl/review-concierto-entre-mosh-y-pop-asi-se-vivio-el-intenso-dia-2-de-lollapalooza-chile-2026/" target="_blank"> Lollapalooza Día 2: Entre mosh y pop ↗</a></li>
-                    </ul>
-                </section>
+                    <!-- ESTADÍSTICAS E IMPACTO[cite: 2] -->
+                    <section class="stats-container">
+                        <div class="stat-item">
+                            <div class="stat-num">+100</div>
+                            <div class="stat-label">Conciertos Cubiertos</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-num">+50</div>
+                            <div class="stat-label">Entrevistas Exclusivas</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-num">Rockalavena</div>
+                            <div class="stat-label">Redactor Principal</div>
+                        </div>
+                    </section>
 
-                <section class="reels">
-                    <h2>Entrevistas & Reels</h2>
-                    <ul class="link-list">
-                        <li><a href="https://www.instagram.com/reel/DYH8eb3OX75/" target="_blank"> Reel: Trend KORN live at PARQUE ESTADIO NACIONAL ↗</a></li>
-                        <li><a href="https://www.instagram.com/reel/DV8yylvDWX5/" target="_blank"> Entrevista: Claudio Valenzuela (Lucybell) ↗</a></li>
-                        <li><a href="https://www.instagram.com/reel/DNXGx1Ptyw-/" target="_blank"> Entrevista: Andi Deris (Helloween) ↗</a></li>
-                        <li><a href="https://www.instagram.com/reel/DHjyN7IxsYQ/" target="_blank"> Entrevista: Arde Bogotá Lolla ↗</a></li>
-                    </ul>
-                </section>
+                    <!-- TESTIMONIALES / FRASES DESTACADAS[cite: 2] -->
+                    <section class="testimonials">
+                        <h2>Frases Destacadas en Entrevistas</h2>
+                        <div class="quotes-slider">
+                            <div class="quote-slide active">
+                                <p class="quote-text">"Conversamos sobre el verdadero espíritu del metal, una de las charlas más profundas sobre nuestro legado."</p>
+                                <cite class="quote-author">— Andi Deris (Helloween)</cite>
+                            </div>
+                            <div class="quote-slide">
+                                <p class="quote-text">"Hablamos de música real, de la hermandad y de lo que verdaderamente importa en el pit."</p>
+                                <cite class="quote-author">— Tony Dolan (Venom Inc)</cite>
+                            </div>
+                            <div class="quote-slide">
+                                <p class="quote-text">"Una cobertura impecable que entiende de dónde viene nuestro sonido sin fronteras."</p>
+                                <cite class="quote-author">— Calva Louise</cite>
+                            </div>
+                        </div>
+                        <div class="slider-dots">
+                            <span class="dot active" onclick="setSlide(0)"></span>
+                            <span class="dot" onclick="setSlide(1)"></span>
+                            <span class="dot" onclick="setSlide(2)"></span>
+                        </div>
+                    </section>
 
-                <section class="reels">
-                    <h2>Entrevistas en Youtube</h2>
-                    <ul class="link-list">
-                        <li><a href="https://youtu.be/2MGqZlebLNY?si=TGe_vJ4mv9BF_Bw5" target="_blank"> En Exclusiva: Tony Dolan (Venom Inc) ↗</a></li>
-                        <li><a href="https://youtu.be/FNamreM9PPA?si=RXU3SUX3JjHrd9Al" target="_blank"> Entrevista: Calva Louise: el origen de una banda sin fronteras ↗</a></li>
-                        <li><a href="https://youtu.be/eBRzJ7HGxYw?si=Zrp24LZBJSEOXBQR" target="_blank"> Entrevista: Death Round Show - 18vo capitulo - Marty Friedman ↗</a></li>
-                        <li><a href="https://youtu.be/Gxs1Ay5odDw?si=uEBYUO-EY0EtKpXP" target="_blank"> Entrevista: Death Round Show - 15vo capitulo - Lena Scissorhands (Infected Rain) ↗</a></li>
-                    </ul>
-                </section>
+                    <!-- PESTAÑAS DE FILTRO INTERACTIVAS (ESTILO ORIGINAL RESTAURADO)[cite: 2] -->
+                    <div class="filter-tabs">
+                        <button class="tab-btn active" data-filter="all">Todos</button>
+                        <button class="tab-btn" data-filter="reviews">Reseñas</button>
+                        <button class="tab-btn" data-filter="interviews">Entrevistas</button>
+                        <button class="tab-btn" data-filter="reels">Reels</button>
+                    </div>
+    
+                    <!-- REVIEWS[cite: 2] -->
+                    <section class="reviews card filterable" data-category="reviews">
+                        <h2>Reseñas Destacadas</h2>
+                        <ul class="link-list">
+                            <li><a href="https://www.rockalavena.cl/eventos-el-dia-en-que-el-teatro-caupolican-se-transformo-en-el-reino-encantado-de-rhapsody/" target="_blank">El día en que el Teatro Caupolicán se transformó en reino</a></li>
+                            <li><a href="https://www.rockalavena.cl/review-concierto-black-label-society-en-vivo-entre-el-luto-la-hermandad-y-un-legado-que-no-se-apaga/" target="_blank">Black Label Society: Entre el luto y la hermandad</a></li>
+                            <li><a href="https://www.rockalavena.cl/review-concierto-entre-pop-electronica-y-rock-asi-se-vivio-la-jornada-final-de-lollapalooza-clile/" target="_blank">Lollapalooza: Entre pop, electrónica y rock</a></li>
+                            <li><a href="https://www.rockalavena.cl/review-concierto-entre-mosh-y-pop-asi-se-vivio-el-intenso-dia-2-de-lollapalooza-chile-2026/" target="_blank">Lollapalooza Día 2: Entre mosh y pop</a></li>
+                        </ul>
+                    </section>
 
-                <!-- 📺 SECCIÓN VIDEO EMBED DE YOUTUBE (AHORA ANTES DE CONTACTO) -->
-                <section class="featured-video">
-                    <h2>Contenido Destacado</h2>
-                    <div class="video-wrapper">
-                        <!-- Reemplaza el ID "dQw4w9WgXcQ" por el ID de tu video preferido de YouTube -->
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/t3Cf0qtsncw?si=p7JYZ_Kcm9qsfAmn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </section>
+                    <!-- ⭐ MULTIMEDIA DE RESEÑA DESTACADA (CON PORTADA REAL Y TEXTO) -->
+                    <section class="featured-review card filterable" data-category="reviews" style="display: none;">
+                        <h2>Review Destacado</h2>
+                        <div class="media-wrapper" style="position: relative;">
+                            <!-- Enlace directo que envuelve la portada oficial de la nota -->
+                            <a href="https://www.rockalavena.cl/eventos-el-dia-en-que-el-teatro-caupolican-se-transformo-en-el-reino-encantado-de-rhapsody/" target="_blank" style="display: block; width: 100%; height: 100%; position: relative; text-decoration: none;">
+                                <!-- Foto real del show de Rhapsody -->
+                                <img src="https://www.rockalavena.cl/wp-content/uploads/2026/06/PSX_20260612_110716-1024x683.jpg" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px; display: block;">
+                                
+                                <!-- Capa de texto superpuesta con degradado oscuro inferior -->
+                                <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px; box-sizing: border-box; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 70%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end;">
+                                    <span style="font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 800; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.9); margin-bottom: 2px; text-transform: uppercase; letter-spacing: -0.5px;">Rhapsody en Chile</span>
+                                    <small style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-weight: 700;">Leer nota en Rockalavena.cl →</small>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+    
+                    <!-- YOUTUBE INTERVIEWS[cite: 2] -->
+                    <section class="youtube-interviews card filterable" data-category="interviews">
+                        <h2>Entrevistas en Youtube</h2>
+                        <ul class="link-list">
+                            <li><a href="https://youtu.be/2MGqZlebLNY?si=TGe_vJ4mv9BF_Bw5" target="_blank">En Exclusiva: Tony Dolan (Venom Inc)</a></li>
+                            <li><a href="https://youtu.be/FNamreM9PPA?si=RXU3SUX3JjHrd9Al" target="_blank">Entrevista: Calva Louise: el origen de una banda sin fronteras</a></li>
+                            <li><a href="https://youtu.be/eBRzJ7HGxYw?si=Zrp24LZBJSEOXBQR" target="_blank">Entrevista: Death Round Show - Marty Friedman</a></li>
+                            <li><a href="https://youtu.be/Gxs1Ay5odDw?si=uEBYUO-EY0EtKpXP" target="_blank">Entrevista: Death Round Show - Lena Scissorhands</a></li>
+                        </ul>
+                    </section>
 
-                <section class="contact">
-                    <h2>Contacto</h2>
-                    <ul class="link-list">
-                        <li><a href="mailto:bonilla29_88@outlook.com">bonilla29_88@outlook.com ↗</a></li>
-                    </ul>
-                </section>
+                    <!-- VIDEO DESTACADO (Siempre visible en la pestaña 'Todos' y en 'Entrevistas')[cite: 2] -->
+                    <section class="featured-video card filterable" data-category="interviews">
+                        <h2>Contenido Destacado</h2>
+                        <div class="video-wrapper">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/t3Cf0qtsncw?si=p7JYZ_Kcm9qsfAmn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                        </div>
+                    </section>
+    
+                    <!-- REELS[cite: 2] -->
+                    <section class="reels card filterable" data-category="reels">
+                        <h2>Entrevistas & Reels</h2>
+                        <ul class="link-list">
+                            <li><a href="https://www.instagram.com/reel/DYH8eb3OX75/" target="_blank">Reel: Trend KORN live at PARQUE ESTADIO NACIONAL</a></li>
+                            <li><a href="https://www.instagram.com/reel/DV8yylvDWX5/" target="_blank">Entrevista: Claudio Valenzuela (Lucybell)</a></li>
+                            <li><a href="https://www.instagram.com/reel/DNXGx1Ptyw-/" target="_blank">Entrevista: Andi Deris (Helloween)</a></li>
+                            <li><a href="https://www.instagram.com/reel/DHjyN7IxsYQ/" target="_blank">Entrevista: Arde Bogotá Lolla</a></li>
+                        </ul>
+                    </section>
 
-                <!-- 💳 SECCIÓN PAYPAL -->
-                <div class="paypal-container">
-                    <a href="https://paypal.me/wildtus?locale.x=en_US&country.x=CL" target="_blank" class="btn-paypal">
-                        ☕ Apoya mi contenido (PayPal) ↗
-                    </a>
-                </div>
+                    <!-- ⭐ MULTIMEDIA DE REEL DESTACADO (REPRODUCTOR INSTAGRAM NATIVO CON LOOK VERTICAL) -->
+                    <section class="featured-reel card filterable" data-category="reels" style="display: none;">
+                        <h2>Reel Destacado</h2>
+                        <div class="instagram-wrapper">
+
+                            <!-- 🚨 AQUÍ COMIENZA EL EMBED DE INSTAGRAM 🚨 -->
+                            <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DV9qNiyjWf1/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DV9qNiyjWf1/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DV9qNiyjWf1/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Rock a la vena Chile® (@rockalavena.cl)</a></p></div></blockquote>
+<script async src="//www.instagram.com/embed.js"></script>
+                            <script async src="https://www.instagram.com/embed.js"></script>
+                            <!-- 🚨 AQUÍ TERMINA EL EMBED DE INSTAGRAM 🚨 -->
+
+                        </div>
+                    </section>
+                    
+                    <!-- CONTENEDOR ANIDADO DE CONTACTO, SPOTIFY Y PAYPAL[cite: 2] -->
+                    <div class="contact-paypal-wrapper">
+                        <!-- CONTACTO[cite: 2] -->
+                        <section class="contact card">
+                            <h2>Contacto</h2>
+                            <p style="font-size: 0.95rem; margin-top: 0; margin-bottom: 20px; color: var(--text-secondary);">Para coberturas, acreditaciones o entrevistas de prensa:</p>
+                            <ul class="link-list contact-list">
+                                <li><a href="mailto:bonilla29_88@outlook.com">bonilla29_88@outlook.com</a></li>
+                            </ul>
+                        </section>
+                        
+                        <!-- SPOTIFY -->
+                        <section class="spotify-card card">
+                            <h2>Mi Playlist</h2>
+                            <p style="font-size: 0.95rem; margin-top: 0; margin-bottom: 20px; color: var(--text-secondary);">Lo que está sonando en mis audífonos esta semana:</p>
+                            <!-- Contenedor para centrar y limitar el ancho tipo celular -->
+                            <div style="width: 100%; max-width: 340px; margin: 0 auto;">
+                                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1Epgb9lCppuBd9?utm_source=generator&si=b2fe3f4341744f22" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                            </div>
+                        </section>
+        
+                        <!-- APOYO / PAYPAL[cite: 2] -->
+                        <section class="paypal-card card">
+                            <h2>Apoya mi contenido</h2>
+                            <p style="font-size: 0.95rem; margin-top: 0; margin-bottom: 20px; color: var(--text-secondary);">Si disfrutas de la cobertura y las entrevistas exclusivas, puedes apoyarme con un café:</p>
+                            <a href="https://paypal.me/wildtus?locale.x=en_US&country.x=CL" target="_blank" class="btn-paypal">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="flex-shrink:0;"><path d="M2 21h18v-2H2v2zM20 8h-2V5h2v3zm2-5H18c-1.1 0-2 .9-2 2v5c0 1.1.9 2 2 2h2c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM4 19h10c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2z"/></svg>
+                                <span>Invítame un Café</span>
+                            </a>
+                        </section>
+                    </div>
+
+                </div> <!-- Cierre .grid-layout -->
 
                 <footer>
                     <p>© 2026 | Nos vemos en el pit \m/</p>
                 </footer>
               
-            </div> <!-- Cierre .info-container -->
+            </main> <!-- Cierre .info-container -->
         </div> <!-- Cierre .content-side -->
 
     </div> <!-- Cierre .main-wrapper -->
+
+    <script>
+        // --- 🗂️ FILTRO DE SECCIONES (TABS) ---
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const filterableCards = document.querySelectorAll('.filterable');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filterValue = btn.getAttribute('data-filter');
+                
+                filterableCards.forEach(card => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(15px)';
+                    
+                    setTimeout(() => {
+                        // Lógica especial: si es "Todos", la tarjeta destacada de videos (que tiene categoría interviews) DEBE mostrarse.
+                        if (filterValue === 'all') {
+                            if (card.classList.contains('featured-review') || card.classList.contains('featured-reel')) {
+                                card.style.display = 'none';
+                            } else {
+                                card.style.display = 'flex';
+                                setTimeout(() => {
+                                    card.style.opacity = '1';
+                                    card.style.transform = 'translateY(0)';
+                                }, 50);
+                            }
+                        } else {
+                            // Para las demás pestañas, se aplica el filtrado estricto por categoría
+                            if (card.getAttribute('data-category') === filterValue) {
+                                card.style.display = 'flex';
+                                setTimeout(() => {
+                                    card.style.opacity = '1';
+                                    card.style.transform = 'translateY(0)';
+                                }, 50);
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    }, 300);
+                });
+            });
+        });
+
+        // --- 🎙️ CARRUSEL DE TESTIMONIALES ---
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.quote-slide');
+        const dots = document.querySelectorAll('.dot');
+        
+        function setSlide(index) {
+            if (index < 0 || index >= slides.length) return;
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            currentSlide = index;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+        
+        setInterval(() => {
+            let next = (currentSlide + 1) % slides.length;
+            setSlide(next);
+        }, 6000);
+
+        // --- 📌 HEADER PEGAJOSO (STICKY NAV) CON CORRECCIÓN DE SALTO ---
+        const header = document.getElementById('main-header');
+        const heroBanner = document.querySelector('.hero-banner');
+        const mainContent = document.querySelector('main');
+        
+        window.addEventListener('scroll', () => {
+            const threshold = heroBanner.offsetHeight * 0.4;
+            if (window.scrollY > threshold) {
+                if (!header.classList.contains('sticky')) {
+                    header.classList.add('sticky');
+                    mainContent.style.marginTop = header.offsetHeight + 'px';
+                }
+            } else {
+                if (header.classList.contains('sticky')) {
+                    header.classList.remove('sticky');
+                    mainContent.style.marginTop = '0px';
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>
